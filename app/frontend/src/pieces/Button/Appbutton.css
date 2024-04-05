@@ -1,0 +1,41 @@
+.appbutton {
+    padding: 12px;
+    background-color: var(--black-color-1st);
+    color: var(--white-color-1st);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-size: 12px;
+    outline: none;
+    border: none;
+}
+.appbutton i {
+    color: var(--white-color-1st);
+    margin-left: 8px;
+    transition: margin-left linear 0.2s;
+    -webkit-transition: margin-left linear 0.2s;
+    -moz-transition: margin-left linear 0.2s;
+    -ms-transition: margin-left linear 0.2s;
+    -o-transition: margin-left linear 0.2s;
+}
+.appbutton:hover i{
+    margin-left: 20px;
+}
+.appbutton span{
+    font-weight: 700;
+}
+.appbutton:hover {
+    opacity: 80%;
+}
+.appbutton:disabled {
+    cursor: no-drop;
+ }
+.appbutton.hide {
+    opacity: 0;
+    pointer-events: none
+}

@@ -1,0 +1,3 @@
+[submodule "model/cnn/lrfinder"]
+	path = model/cnn/lrfinder
+	url = https://github.com/beringresearch/lrfinder/

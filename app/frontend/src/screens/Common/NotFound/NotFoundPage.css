@@ -1,0 +1,35 @@
+.notfoundpage {
+    height: 100vh;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10rem;
+    transform: translateY(-90px);
+    -webkit-transform: translateY(-90px);
+    -moz-transform: translateY(-90px);
+    -ms-transform: translateY(-90px);
+    -o-transform: translateY(-90px);
+}
+
+.notfoundpage h1 {
+    font-size: 150px;
+    user-select: none;
+    text-align: center;
+}
+
+.notfoundpage p {
+    user-select: none;
+}
+
+.notfoundpage+.footer {
+    margin-top: 0;
+}
+
+.img {
+    position: absolute;
+    bottom: 0;
+    transition: all 0.3s;
+    left: -100px
+}

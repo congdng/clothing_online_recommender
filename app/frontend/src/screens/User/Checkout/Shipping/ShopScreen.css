@@ -1,0 +1,33 @@
+.filterbanner {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px 5%;
+    
+  }
+  
+.filtercol {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    width: 30%;
+    border: solid 1px #f7f7f7;
+    max-width: 100%;
+}
+.slider {
+    width: 90%;
+  }
+.MuiSlider-markLabel {
+    font-size: 10px !important
+  }
+
+.filtercol select {
+    outline: none;
+    border: solid 1px #ddd;
+    padding: 12px;
+    font-size: 1.4rem;
+  }
+.filtercol h4 {
+    margin-bottom: 20px
+  }

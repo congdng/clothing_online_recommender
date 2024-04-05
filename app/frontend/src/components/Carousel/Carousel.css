@@ -1,0 +1,23 @@
+.carouselbanner {
+    height: 50vh;
+    position: relative;
+  }
+.carouselcontrols {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    gap: 35px;
+    padding: 20px 10%;
+    font-weight: 700; 
+    justify-content: center;
+    font-size: 12px;
+}
+  .carouselcontrols span {
+    cursor: pointer;
+    transition: all 0.3s
+  }
+  
+  .carouselcontrols .activecarouselitem i, .carouselcontrols i:hover {
+    color: var(--primary-color);
+  }

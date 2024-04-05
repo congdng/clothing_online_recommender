@@ -1,0 +1,16 @@
+.footer {
+  padding: 40px 10%;
+  background-color: var(--black-color-1st);
+  color: var(--white-color-1st);
+  margin-top: 20px
+}
+
+.footer .columns {
+  display: flex;
+  justify-content: space-around;
+  gap: 25px
+}
+
+.column h4 {
+  text-align: center
+}

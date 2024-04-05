@@ -1,0 +1,16 @@
+.cart_product{
+    border-bottom: 0.2rem solid var(--black-color-1st);
+}
+
+.cart_product select{
+    font-size: 1.6rem;
+    border: 0.1rem solid var(--black-color-1st);
+}
+.cart_screen{
+    margin: 2rem auto;
+}
+.cart_screen h1{
+    font-size: 2.4rem;
+    color: var(--black-color-1st);
+    font-weight: 700;
+}

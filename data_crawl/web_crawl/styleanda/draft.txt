@@ -1,0 +1,57 @@
+API_KEY = 'e3f4359a-46b7-4fab-87c9-13ae9ab0da37'
+
+def get_scrapeops_url(url):
+    payload = {'api_key': API_KEY, 'url': url, 'bypass': 'cloudflare'}
+    proxy_url = 'https://proxy.scrapeops.io/v1/?' + urlencode(payload)
+    return proxy_url
+    class StyleandaClothesSpider(scrapy.Spider):
+    name = "styleanda_clothes"
+    allowed_domains = ['stylenandaen.com']
+    start_urls = ['https://stylenandaen.com/category/outerwear/51/']
+
+    script = """
+        function main(splash, args)
+            url = args.url
+            assert(splash:go(url))
+            assert(splash:wait(10))
+            return splash:html()
+        end
+        """ 
+        
+    def start_requests(self):
+        for url in self.start_urls:
+            yield SplashRequest(get_scrapeops_url(url), self.parse, endpoint='execute', args={"lua_source": self.script, "timeout": 600})
+
+
+    def parse(self, response):
+        products = response.xpath("//li[@class='xans-record-']/div")
+        for product in products:
+            link = product.xpath(".//div[@class='name']/a/@href").get()
+            absolute_url = f"https://stylenandaen.com{link}"
+            image_link = product.xpath(".//a[contains(@class, 'thumb_slide_over')]/img/@src").get()
+            # yield response.follow(url=link, callback=self.parse_detail, meta={'url': absolute_url, 'imageLink': image_link})
+            yield {
+                'link': absolute_url,
+                'imglink': image_link
+            }
+            
+    def parse_detail(self, response):
+        item = StyleandaItem()
+        item["name"] = response.xpath("//div[@class='prdName']/text()").get()
+        item["brand"] = "Stylenandaen"
+        item["price_org"] = response.xpath("//span[@class='price ']/text()").get()
+        item["price_sale"] = response.xpath("//span[contains(@class, 'sale_price ')]/text()").get()
+        item["url"] = response.request.meta['url']
+        item["image_link"] = response.request.meta['imageLink']
+        item["description"] = """
+        Manufacturer: Nanda Inc. Partners / Country of Manufacture: South Korea / Seller: Nanda Inc. / Date of Manufacture: Jun. 2023
+        Defective items will be refunded based on the regulations of Korea Fair Trade Commission.
+        Warranty Manager : Nanda Inc. Customer Service Center (1) 877.708.3574
+        The color displayed may vary depending on your screen.
+        The accurate color of the item is better displayed on the detailed photos at the bottom of the page.
+        Unauthorized use of images on this website is strictly prohibited and can result in civil and criminal penalties.
+        """
+        item["numReviews"] = random.randint(0, 50)
+        item["rating"] = round(random.uniform(1.00, 5.00), 2)
+        item["countInStock"] = random.randint(0, 60)
+        yield item

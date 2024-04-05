@@ -1,0 +1,39 @@
+.arrow {
+    position: absolute;
+    z-index: 1;
+    left: 35px;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 12px;
+    box-shadow: var(--light-shadow);
+    opacity: 1;
+    transition: all 0.3s;
+    opacity: 0;
+  }
+  .arrow:last-of-type {
+    right: 35px;
+    left: initial
+  }
+  
+  
+  .menu-wrapper .skeleton {
+    margin-right: 10px;
+  }
+  .horizontal-menu:hover .arrow {
+    opacity: 1;
+  }
+  .horizontal-menu .arrow.hidearrow {
+    opacity: 0;
+    pointer-events: none
+  }
+
+  .react-horizontal-scrolling-menu--item .product {
+    width: 200px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }

@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+
+:root {
+  --white-color-1st: #f6cd9e;
+  --white-color-2nd: #e9ecef;
+  --white-color-3rd: #dee2e6;
+  --white-color-4th: #ced4da;
+  --grey-color: #adb5bd;
+  --black-color-1st: #584361;
+  --black-color-2nd: #343a40;
+  --black-color-3rd: #495057;
+  --black-color-4th: #6c757d;
+  --box-shadow-1: 0px 10px 30px 0px rgba(0, 0, 0, 0.15);
+  --box-shadow-2: 0 5px 15px rgba(250, 107, 74, 0.2);
+  --gradient: linear-gradient(to bottom, var(--black-color-1st), var(--white-color-1st));
+  --header-height: 135px;
+}
+
+.col-lg-2-4 {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 20%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+*::selection,
+*::after::selection,
+*::before::selection {
+  color: var(--white-color-1st);
+  background-color: var(--black-color-1st);
+}
+
+/* Scrollbar */
+/* Designing for scroll-bar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--black-color-1st);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey-color);
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.2;
+  font-family: "Playfair Display", serif;
+  box-sizing: border-box;
+  background-color: var(--white-color-1st);
+  color: var(--black-color-1st);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--black-color-3rd);
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+p {
+  line-height: 3rem;
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: all linear 0.25s;
+}
+
+img:hover {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+}
+
+input[type=checkbox]:checked {
+  accent-color: var(--black-color-1st);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes growth {
+  from {
+    tranform: scale(var(--growth-from));
+  }
+
+  to {
+    tranform: scale(var(--growth-to));
+  }
+}
+
+@keyframes showcolor {
+  to {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+  }
+}
+
+@keyframes rotate360 {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    -moz-transform: translate(-50%, -50%) rotate(360deg);
+    -ms-transform: translate(-50%, -50%) rotate(360deg);
+    -o-transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Button */
+.btn {
+  font-weight: 700;
+  min-width: 100px;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  padding: 12px 20px;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--black-color-1st);
+  color: var(--white-color-1st);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn .active {
+  background-color: var(--black-color-1st);
+  color: var(--white-color-1st);
+}
+
+.btn i {
+  margin-right: 8px;
+}
+
+.btn:hover {
+  background-color: var(--black-color-4th);
+  color: var(--white-color-1st);
+}
+
+.btn.size-s {
+  height: 32px;
+  font-size: 1.2rem;
+  padding: 0 8px;
+}
+
+.btn.primary {
+  background-color: var(--black-color-4th);
+  color: var(--white-color-1st);
+}
+
+.btn.primary:hover {
+  background-color: var(--white-color-1st);
+  color: var(--black-color-4th);
+}
+
+.btn.disabled {
+  cursor: default;
+  background-color: var(--grey-color);
+  color: var(--black-color-3rd);
+}
+
+.form {
+  margin: 30px 0;
+}
+
+.form input[type*=text],
+.form input[type=ratio],
+.form input[type=password],
+.form input[type=email],
+.form select {
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--black-color-1st);
+  border: none;
+  outline: none;
+  font-weight: 500;
+  background-color: var(--white-color-3rd);
+}
+
+.form input:focus {
+  outline: 2px solid var(--black-color-1st);
+  outline-offset: -2px;
+}
+
+.form textarea {
+  width: 100%;
+  padding: 16px 12px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--black-color-1st);
+  background-color: var(--white-color-3rd);
+  outline: none;
+  font-weight: 500;
+}
+
+.flex_display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid var(--black-color-1st);
+}

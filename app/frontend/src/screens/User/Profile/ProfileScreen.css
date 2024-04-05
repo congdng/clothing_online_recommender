@@ -1,0 +1,60 @@
+.profile {
+    min-height: 70vh;
+    margin: 40px;
+}
+
+.profile .menu-item {
+    width: 70%;
+    background-color: var(--white-color-1nd);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border: 1px solid var(--black-color-1st);
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: var(--black-color-1st);
+}
+
+.profile .menu-item i {
+    margin-right: 8px;
+}
+
+.profile .menu-item.menu-item--active {
+    color: var(--white-color-1st);
+    background-color: var(--black-color-1st);
+}
+
+.profile__section .heading {
+    border-bottom: 0.2rem solid var(--black-color-1st);
+}
+
+.profile__section .heading h2 {
+    padding: 32px 0;
+    font-size: 2.8rem;
+    color: var(--black-color-1st);
+}
+
+.account_edit {
+    border-top: 0.2rem solid var(--black-color-1st);
+    margin: 1.6rem 0;
+}
+
+.account_edit h2 {
+    font-size: 2rem;
+    color: var(--black-color-1st);
+}
+
+.account_edit input {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border: 0.1rem solid var(--black-color-1st);
+}
+
+.account_edit button {
+    margin-right: 1rem;
+}

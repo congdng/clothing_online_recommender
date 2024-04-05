@@ -1,0 +1,47 @@
+.product_header {
+    border-bottom: 0.1rem;
+    border-style: solid;
+    border-color: var(--black-color-1st);
+}
+
+.product_header .header_social {
+    background-color: var(--black-color-1st);
+    color: var(--white-color-1st);
+}
+
+.header_social i {
+    font-size: 1.8rem;
+    padding: 1.6rem;
+
+}
+
+.product_header .header_menu .header_menu_direction{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.header_webname h3{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black-color-1st);
+}
+
+.header_link,
+.header_user{
+    gap: 2.8rem;
+    font-size: 1.6rem;
+    color: var(--black-color-1st);
+    font-weight: 600;
+}
+
+.header_menu .header_user .btn.active,
+.header_menu .header_user .btn:hover{
+    background-color: var(--black-color-1st);
+    color: var(--white-color-1st);
+}
+
+.header_user .nav-item.dropdown .dropdown-toggle.nav-link{
+    text-transform: uppercase;
+}
