@@ -128,7 +128,7 @@ Follow these below step if you want to rebuild dataset
 - Finally, run the web server, enter below:
 
 ```bash
-streamlit run main.py
+npm run detect
 ```
 
 Run the website 
