@@ -99,7 +99,7 @@ pip install -r requirements.txt
 ~~~
   
 ## Usage
-Follow these below step:
+Follow these below step if you want to rebuild dataset
 - Download the DeepLearning2 Dataset. After downloading the dataset, three folders including train, validation and test are formed. Each folder has two another smaller folders: annos containing seperated json file for each image; image.
 - Run the json_combine.py to combine all the json file of the trainset and valid set.
 - Run the category_change.py. Since the initial dataset has 13 categories, we need to narrow down to 5 categories.
@@ -125,6 +125,20 @@ Follow these below step:
 ```bash
 streamlit run main.py
 ```
+
+The web contains front-end and back-end built on MERN model.
+Step 1: Install back-end package in app folder
+Step 2: install front-end package in app/frontend.
+Run only front-end: npm run client
+Run only back-end: npm run server
+Run only model: npm run detect
+Run the whole web: npm run dev
+
+Web Structure
+Website contains front-end and back-end run on one url
+Model runs on another url
+After deploying the model,change the model url in line 45 app/frontend/src/components/Header/Header.js
+After deploying the web, change web url in app/model/website.cfg
 
 ## Library
 
